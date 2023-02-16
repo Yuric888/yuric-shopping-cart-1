@@ -4,14 +4,15 @@ import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
 import Store from "./pages/Store/Store";
 import { Container } from "react-bootstrap";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 const NavbarWrapper = () => {
   return (
-    <div className="pb-5">
+    <ShoppingCartProvider>
       <Navbar />
-      <Container>
+      <Container className="pb-5">
         <Outlet />
       </Container>
-    </div>
+    </ShoppingCartProvider>
   );
 };
 const router = createBrowserRouter([
